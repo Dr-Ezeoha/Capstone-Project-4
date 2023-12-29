@@ -1,0 +1,25 @@
+    
+    <%- include("partials/header.ejs")%> <!--calling the header part-->
+        <div id="container">
+            <h1>Cool off with jokes of your choice!</h1>
+            <h2>Choose a joke...</h2>
+            <div id="jokes-container" class="allJokes">
+                <input id="Any" class="buttons" type="submit" value="Any" name="submit" onclick="window.location.href='/Any'"/>
+                <input id="Christmas" class="buttons" type="submit" value="Christmas"  name="submit" onclick="window.location.href='/christmas'"/>
+                <input id="Dark" class="buttons" type="submit" value="Dark" onclick="window.location.href='/dark'"/>
+                <input id="Misc" class="buttons" type="submit" value="Miscellenous" onclick="window.location.href='/misc'"/>
+                <input id="Programming" class="buttons"  type="submit" value="Programming" name="submit" onclick="window.location.href='/programming'"/>
+                <input id="Pun" class="buttons" type="submit" value="Pun" name="submit" onclick="window.location.href='/pun'"/>
+                <input id="Spooky" class="buttons" type="submit" value="Spooky" name="submit" onclick="window.location.href='/spooky'"/>
+            </div>
+            <div>
+                <!--checkoing if the joke ecists via locals-->
+                <%if (locals.joke){%>
+                    <p><%= joke%></p>
+                <%}else{%>
+                    <p>Make your choice to get a joke.</p>
+                <%}%>
+            </div>
+            <input type="reset" value="Reset" class="buttons">
+        </div> 
+        <%- include("partials/footer.ejs")%> <!--calling the footer part-->
